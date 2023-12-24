@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap');
+
+.container-allcards {
+    background-image: url("../resources/bg-christmas.jpg");
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    height: 100vh;
+
+
+
+    .main {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+
+        .upper-tab {
+
+
+            height: fit-content;
+            background-color: white;
+            border-radius: 20px;
+            display: flex;
+            padding: 40px;
+            margin-top: 10px;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 800;
+            margin-top: 50px;
+            justify-content: center;
+            align-items: center;
+            white-space: nowrap;
+            width: 60%;
+            animation: vertical-shaking 1s infinite ease-in-out;
+            cursor: pointer;
+
+            @media screen and (max-width: 600px) {}
+
+
+            padding: 20px;
+
+            a {
+                text-decoration: none;
+                color: black;
+
+                &:hover {
+                    color: goldenrod;
+                }
+            }
+
+
+
+
+
+        }
+
+        @keyframes vertical-shaking {
+            0% {
+                transform: translateY(0)
+            }
+
+            25% {
+                transform: translateY(10px)
+            }
+
+            50% {
+                transform: translateY(-10px)
+            }
+
+            70% {
+                transform: translateY(10px)
+            }
+
+            75% {
+                transform: translateX(0px)
+            }
+
+            100% {
+                transform: translateY(0)
+            }
+        }
+    }
+
+    .box {
+        margin: 50px;
+
+        @media screen and (max-width: 600px) {
+            margin: auto;
+            margin-top: 50px;
+        }
+
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+        align-items: center;
+        gap: 10px;
+
+        .cards {
+            width: 25%;
+            height: fit-content;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+
+            @media screen and (max-width: 600px) {
+                width: 80%;
+            }
+
+            .name {
+                font-size: 18px;
+                margin-bottom: px;
+
+                @media screen and (max-width: 600px) {
+                    font-size: 16px;
+                }
+            }
+
+            .address {
+                font-size: 18px;
+                margin-bottom: 10px;
+
+                @media screen and (max-width: 600px) {
+                    font-size: 16px;
+                }
+            }
+
+            .wish {
+                font-size: 18px;
+                margin-bottom: 10px;
+
+                @media screen and (max-width: 600px) {
+                    font-size: 16px;
+                }
+
+                .wish-value {
+                    color: blueviolet;
+                }
+            }
+        }
+    }
+}
