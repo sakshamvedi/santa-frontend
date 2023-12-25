@@ -18,7 +18,7 @@ function Allcards() {
             console.log(allcards);
         }
         getAllCards();
-    }, [])
+    }, [allcards])
 
     return (
         <>
