@@ -1,14 +1,30 @@
 import React, { useState } from 'react'
 import '../styles/myaddress.scss'
 import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 function Myaddress() {
 
     const [name, setName] = useState('');
     const [address, setAddress] = useState('');
     const [wish, setWish] = useState('');
+
+    const navigate = useNavigate();
+
     const obj = { name, address, wish };
     async function sendWish() {
+        if(name === ''){
+            alert('Please Enter Your Name');
+            return;
+        }
+        if(address === ''){
+            alert('Please Enter Your Address');
+            return;
+        }
+        if(wish === ''){
+            alert('Please Enter Your Wish');
+            return;
+        }
         let headersList = {
             "Accept": "*/*",
             "Content-Type": "application/json"
@@ -28,6 +44,8 @@ function Myaddress() {
 
         let data = await response.text();
         console.log(data);
+
+        navigate('/myaddress');
 
     }
 
@@ -52,9 +70,9 @@ function Myaddress() {
                 </div>
                 <span>
                     <button className='btn' onClick={sendWish}>
-                        <Link to="/myaddress">
+                        {/* <Link to="/myaddress"> */}
                             Send My Wish
-                        </Link>
+                        {/* </Link> */}
                     </button>
                     <button className='btn'>
                         <Link to="/myaddress">
